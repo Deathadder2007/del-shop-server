@@ -1,9 +1,13 @@
 {
   "build": {
-    "builder": "nixpacks"
+    "builder": "nixpacks",
+    "buildCommand": "npm install"
   },
   "deploy": {
     "startCommand": "npm start",
-    "restartPolicyType": "ON_FAILURE"
+    "restartPolicyType": "ON_FAILURE",
+    "healthcheckPath": "/health",
+    "healthcheckTimeout": 30,
+    "sleepApplication": false
   }
 }
